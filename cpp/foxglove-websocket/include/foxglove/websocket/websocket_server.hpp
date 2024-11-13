@@ -1339,6 +1339,12 @@ void Server<ServerConfiguration>::handleAdvertise(const nlohmann::json& payload,
     advertisement.topic = topic;
     advertisement.encoding = chan.at("encoding").get<std::string>();
     advertisement.schemaName = chan.at("schemaName").get<std::string>();
+    if (chan.contains("schema")) {
+      *advertisement.schema = chan.at("schema").get<std::string>();
+    }
+    if (chan.contains("schemaEncoding")) {
+      *advertisement.schemaEncoding = chan.at("schemaEncoding").get<std::string>();
+    }
 
     clientPublications.emplace(channelId, advertisement);
     {
