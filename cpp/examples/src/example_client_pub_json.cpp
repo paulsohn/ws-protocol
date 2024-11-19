@@ -12,7 +12,6 @@
 #include <unordered_map>
 
 constexpr char DEFAULT_URI[] = "ws://localhost:8765";
-constexpr auto DEFAULT_TIMEOUT = std::chrono::seconds(5);
 
 std::atomic<bool> doAbort = false;
 
@@ -30,7 +29,7 @@ int main(int argc, char** argv) {
 
     client.advertise({
       {
-        .topic = "example_msg",
+        .topic = "client_pub_json",
         .encoding = "json",
         .schemaName = "some_schema",
         .schemaEncoding = "json",

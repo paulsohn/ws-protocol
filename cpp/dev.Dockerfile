@@ -54,5 +54,8 @@ CMD ["examples/build/Release/example_client_perf_test"]
 FROM build_examples AS example_client_pub_json
 CMD ["examples/build/Release/example_client_pub_json"]
 
-FROM build_examples AS example_server_client_pub_json
-CMD ["examples/build/Release/example_server_client_pub_json"]
+FROM build_examples AS example_client_pub_protobuf
+CMD ["examples/build/Release/example_client_pub_protobuf"]
+
+FROM build_examples AS example_server_client_pub
+CMD ["examples/build/Release/example_server_client_pub"]

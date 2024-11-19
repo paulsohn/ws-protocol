@@ -52,7 +52,7 @@ int main(int argc, char** argv) {
     std::cout << "schema def: " << adv.schema.value() << std::endl;
   };
   server->setHandlers(std::move(hdlrs));
-  server->start("localhost", 8765);
+  server->start("0.0.0.0", 8765);
   std::signal(SIGINT, signal_handler);
 
   while (!doAbort) {

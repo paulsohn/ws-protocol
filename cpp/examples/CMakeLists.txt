@@ -31,8 +31,10 @@ target_link_libraries(example_server_json foxglove-websocket::foxglove-websocket
 
 add_executable(example_client_pub_json src/example_client_pub_json.cpp)
 target_link_libraries(example_client_pub_json foxglove-websocket::foxglove-websocket)
-add_executable(example_server_client_pub_json src/example_server_client_pub_json.cpp)
-target_link_libraries(example_server_client_pub_json foxglove-websocket::foxglove-websocket)
+add_executable(example_client_pub_protobuf src/example_client_pub_protobuf.cpp)
+target_link_libraries(example_client_pub_protobuf foxglove-websocket::foxglove-websocket foxglove-schemas-protobuf::foxglove-schemas-protobuf)
+add_executable(example_server_client_pub src/example_server_client_pub.cpp)
+target_link_libraries(example_server_client_pub foxglove-websocket::foxglove-websocket)
 
 find_package(Boost COMPONENTS program_options REQUIRED)
 add_executable(example_server_perf_test src/example_server_perf_test.cpp)

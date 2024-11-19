@@ -44,6 +44,10 @@ example_client_perf_test:
 example_client_pub_json:
 	docker compose run example_client_pub_json
 
-.PHONY: example_server_client_pub_json
-example_server_client_pub_json:
-	docker compose run example_server_client_pub_json
+.PHONY: example_client_pub_protobuf
+example_client_pub_protobuf:
+	docker compose run example_client_pub_protobuf
+
+.PHONY: example_server_client_pub
+example_server_client_pub:
+	docker compose run example_server_client_pub

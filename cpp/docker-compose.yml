@@ -56,9 +56,16 @@ services:
       target: example_client_pub_json
     network_mode: "host"  # Use host network for better perfomance
   
-  example_server_client_pub_json:
+  example_client_pub_protobuf:
     build:
       context: .
       dockerfile: dev.Dockerfile
-      target: example_server_client_pub_json
+      target: example_client_pub_protobuf
+    network_mode: "host"  # Use host network for better perfomance
+  
+  example_server_client_pub:
+    build:
+      context: .
+      dockerfile: dev.Dockerfile
+      target: example_server_client_pub
     network_mode: "host"  # Use host network for better perfomance
