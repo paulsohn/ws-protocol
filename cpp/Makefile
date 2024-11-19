@@ -39,3 +39,11 @@ example_server_perf_test:
 .PHONY: example_client_perf_test
 example_client_perf_test:
 	docker compose run example_client_perf_test
+
+.PHONY: example_client_pub_json
+example_client_pub_json:
+	docker compose run example_client_pub_json
+
+.PHONY: example_server_client_pub_json
+example_server_client_pub_json:
+	docker compose run example_server_client_pub_json
